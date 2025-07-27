@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophy - Kawaii Tech Dreamland ✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Comfortaa:wght@300;400;500;600;700&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kawaii-pink': '#FFB3E6',
+                        'kawaii-lavender': '#D9B3FF',
+                        'kawaii-mint': '#B3FFD9',
+                        'kawaii-blue': '#B3D9FF',
+                        'kawaii-peach': '#FFCCB3',
+                        'kawaii-yellow': '#FFFFB3',
+                        'dream-dark': '#0f0f23',
+                        'dream-purple': '#1e1b4b',
+                    },
+                    fontFamily: {
+                        'kawaii': ['Comfortaa', 'cursive'],
+                        'cute': ['Nunito', 'sans-serif'],
+                        'bubble': ['Fredoka One', 'cursive'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-cute': 'bounceCute 2s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                        'sparkle': 'sparkle 1.5s ease-in-out infinite',
+                        'heart-beat': 'heartBeat 1.5s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1.2s ease-in-out',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes bounceCute {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(60px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 179, 230, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(255, 179, 230, 0.8); }
+        }
+        
+        .typing-animation::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #FFB3E6;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 179, 230, 0.3);
+        }
+        
+        .kawaii-glassmorphism {
+            background: rgba(217, 179, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 179, 230, 0.4);
+        }
+        
+        .dream-gradient {
+            background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 50%, #0f0f23 100%);
+        }
+        
+        .kawaii-creature {
+            position: absolute;
+            font-size: 35px;
+            transition: all 0.3s ease-out;
+            cursor: pointer;
+            animation: float 4s ease-in-out infinite;
+            z-index: 10;
+        }
+        
+        .kawaii-blob {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FFB3E6, #D9B3FF);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            position: absolute;
+            opacity: 0.7;
+        }
+        
+        .kawaii-cloud {
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(135deg, #B3D9FF, #FFFFB3);
+            border-radius: 50px;
+            position: relative;
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.6;
+        }
+        
+        .kawaii-cloud::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 15px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #B3D9FF, #FFFFB3);
+            border-radius: 50%;
+        }
+        
+        .kawaii-cloud::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #B3D9FF, #FFFFB3);
+            border-radius: 50%;
+        }
+        
+        .twinkling-star {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #FFFFB3;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        .custom-cursor {
+            width: 30px;
+            height: 30px;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            font-size: 20px;
+            animation: bounce-cute 2s ease-in-out infinite;
+        }
+        
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f0f23, #1e1b4b);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .loading-bunny {
+            font-size: 80px;
+            animation: bounce-cute 1s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+        
+        .bubble-button {
+            transition: all 0.3s ease;
+        }
+        
+        .bubble-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 179, 230, 0.5);
+        }
+        
+        .project-card {
+            transition: all 0.4s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 179, 230, 0.3);
+        }
+        
+        .skill-progress {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skill-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FFB3E6, #D9B3FF, #B3D9FF);
+            border-radius: 10px;
+            transition: width 2s ease-out;
+            width: 0%;
+        }
+        
+        .jelly-avatar {
+            animation: bounce-cute 2s ease-in-out infinite;
+            border: 4px solid #FFB3E6;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="dark dream-gradient text-white font-cute overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loading-bunny">🐰</div>
+        <div class="text-2xl font-kawaii text-kawaii-pink mt-4 animate-pulse-soft">Loading kawaii magic...</div>
+        <div class="text-sm text-kawaii-blue mt-2">✨ Preparing your dreamy experience ✨</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor">⭐</div>
+    
+    <!-- Floating Background Elements -->
+    <div id="floating-bg" class="fixed inset-0 pointer-events-none z-0">
+        <!-- Kawaii Clouds -->
+        <div class="kawaii-cloud" style="top: 10%; left: 5%;"></div>
+        <div class="kawaii-cloud" style="top: 30%; right: 10%;"></div>
+        <div class="kawaii-cloud" style="top: 60%; left: 15%;"></div>
+        <div class="kawaii-cloud" style="top: 80%; right: 20%;"></div>
+        
+        <!-- Twinkling Stars -->
+        <div class="twinkling-star" style="top: 15%; left: 10%;"></div>
+        <div class="twinkling-star" style="top: 25%; right: 15%;"></div>
+        <div class="twinkling-star" style="top: 45%; left: 30%;"></div>
+        <div class="twinkling-star" style="top: 65%; right: 30%;"></div>
+        <div class="twinkling-star" style="top: 85%; left: 60%;"></div>
+        <div class="twinkling-star" style="top: 35%; right: 50%;"></div>
+        
+        <!-- Kawaii Blobs -->
+        <div class="kawaii-blob" style="top: 20%; left: 8%;"></div>
+        <div class="kawaii-blob" style="top: 50%; right: 12%;"></div>
+        <div class="kawaii-blob" style="top: 70%; left: 25%;"></div>
+        <div class="kawaii-blob" style="top: 40%; right: 35%;"></div>
+    </div>
+
+    <!-- Kawaii Creatures Container -->
+    <div id="creatures-container" class="fixed inset-0 pointer-events-none z-10">
+        <div class="kawaii-creature" style="top: 20%; left: 5%;">🐱</div>
+        <div class="kawaii-creature" style="top: 40%; left: 10%;">🐰</div>
+        <div class="kawaii-creature" style="top: 60%; left: 15%;">🐻</div>
+        <div class="kawaii-creature" style="top: 80%; left: 8%;">🐼</div>
+        <div class="kawaii-creature" style="top: 30%; right: 5%;">🦄</div>
+        <div class="kawaii-creature" style="top: 50%; right: 10%;">🐸</div>
+        <div class="kawaii-creature" style="top: 70%; right: 15%;">🐧</div>
+        <div class="kawaii-creature" style="top: 25%; left: 30%;">🐹</div>
+        <div class="kawaii-creature" style="top: 45%; left: 35%;">🐨</div>
+        <div class="kawaii-creature" style="top: 65%; left: 40%;">🐯</div>
+        <div class="kawaii-creature" style="top: 85%; left: 45%;">🦊</div>
+        <div class="kawaii-creature" style="top: 35%; right: 30%;">🐮</div>
+        <div class="kawaii-creature" style="top: 55%; right: 35%;">🐷</div>
+        <div class="kawaii-creature" style="top: 75%; right: 40%;">🐵</div>
+        <div class="kawaii-creature" style="top: 15%; left: 60%;">🐺</div>
+        <div class="kawaii-creature" style="top: 35%; left: 65%;">🦝</div>
+        <div class="kawaii-creature" style="top: 55%; left: 70%;">🐿️</div>
+        <div class="kawaii-creature" style="top: 75%; left: 75%;">🦔</div>
+        <div class="kawaii-creature" style="top: 25%; right: 60%;">🐣</div>
+        <div class="kawaii-creature" style="top: 45%; right: 65%;">🐤</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glassmorphism">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bubble font-bold text-kawaii-pink">
+                    <span class="animate-bounce-cute">✨</span> sophy.dev <span class="animate-bounce-cute">🌸</span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-kawaii">
+                    <a href="#home" class="hover:text-kawaii-pink transition-all duration-300 hover:scale-105 bubble-button">
+                        Home <span class="text-xs">🏠</span>
+                    </a>
+                    <a href="#about" class="hover:text-kawaii-blue transition-all duration-300 hover:scale-105 bubble-button">
+                        About <span class="text-xs">🌟</span>
+                    </a>
+                    <a href="#skills" class="hover:text-kawaii-mint transition-all duration-300 hover:scale-105 bubble-button">
+                        Skills <span class="text-xs">💫</span>
+                    </a>
+                    <a href="#projects" class="hover:text-kawaii-lavender transition-all duration-300 hover:scale-105 bubble-button">
+                        Projects <span class="text-xs">🎨</span>
+                    </a>
+                    <a href="#contact" class="hover:text-kawaii-peach transition-all duration-300 hover:scale-105 bubble-button">
+                        Contact <span class="text-xs">💌</span>
+                    </a>
+                </div>
+                <button id="mobile-menu" class="md:hidden text-kawaii-pink hover:scale-110 transition-transform bubble-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="text-center z-20 animate-fade-in">
+            <div class="mb-8">
+                <img src="profile img.jpg" 
+                     alt="Sophy Kawaii Avatar" 
+                     class="w-48 h-48 rounded-full mx-auto mb-6 jelly-avatar shadow-lg animate-glow-pulse">
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bubble font-bold mb-6 bg-gradient-to-r from-kawaii-pink via-kawaii-lavender to-kawaii-blue bg-clip-text text-transparent">
+                Hi, I'm Sophy! 
+                <span class="animate-bounce-cute inline-block">🌸</span>
+            </h1>
+            <div class="text-3xl md:text-5xl mb-8 h-20 font-kawaii">
+                <span class="text-gray-300">I'm a </span>
+                <span id="typing-text" class="text-kawaii-pink typing-animation font-bold"></span>
+            </div>
+            <p class="text-xl text-kawaii-blue mb-8 max-w-3xl mx-auto leading-relaxed font-kawaii italic">
+                "Engineering delightful experiences with code and cuteness." 
+                <span class="animate-heart-beat inline-block">💖</span>
+            </p>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Welcome to my dreamy kawaii tech world! Where imagination meets innovation and every line of code sparkles with joy! 
+                <span class="animate-sparkle inline-block">✨</span>
+            </p>
+            <div class="space-x-6">
+                <a href="#projects" class="glassmorphism hover:bg-white/20 px-8 py-4 rounded-full transition-all duration-300 bubble-button font-semibold">
+                    <span class="mr-2">🎨</span>Explore My Magic
+                </a>
+                <a href="#contact" class="border-2 border-kawaii-pink text-kawaii-pink hover:bg-kawaii-pink hover:text-dream-dark px-8 py-4 rounded-full transition-all duration-300 bubble-button font-semibold">
+                    <span class="mr-2">💌</span>Let's Create Together!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dream-purple/30 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bubble font-bold text-center mb-16 bg-gradient-to-r from-kawaii-blue to-kawaii-mint bg-clip-text text-transparent">
+                <span class="animate-bounce-cute inline-block">🌟</span> About Me <span class="animate-bounce-cute inline-block">🌟</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <div class="kawaii-glassmorphism p-8 rounded-3xl">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-kawaii-pink to-kawaii-blue rounded-full flex items-center justify-center mr-4 animate-bounce-cute">
+                                <span class="text-2xl">💖</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-kawaii font-bold text-kawaii-pink">Kawaii & Creative</h3>
+                                <p class="text-gray-400">Where dreams meet code! <span class="animate-sparkle inline-block">✨</span></p>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                            I'm a software engineering major who believes technology should spark pure joy! I create magical digital experiences 
+                            that make hearts flutter while solving real problems with elegant, kawaii-inspired solutions! 
+                            <span class="animate-heart-beat inline-block">💕</span>
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">💖</span>
+                                <span>Friendly & Collaborative Spirit</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">🧠</span>
+                                <span>Logical Problem Solver</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">🧸</span>
+                                <span>Soft but Strong Developer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">🌸</span>
+                                <span>Kawaii Culture Enthusiast</span>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-r from-kawaii-pink/10 to-kawaii-blue/10 p-4 rounded-2xl border-2 border-kawaii-pink/30">
+                            <p class="text-sm text-gray-400 italic font-kawaii">
+                                "Every line of code I write carries a piece of my heart and a sprinkle of kawaii magic!" 
+                                <span class="animate-sparkle inline-block">🎭</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-up">
+                    <h3 class="text-3xl font-kawaii font-bold mb-8 text-kawaii-blue">My Superpowers <span class="animate-sparkle inline-block">💫</span></h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glassmorphism p-6 rounded-3xl text-center hover:scale-105 transition-transform bubble-button">
+                            <span class="text-4xl mb-3 block animate-bounce-cute">🌐</span>
+                            <div class="font-semibold">Web Development</div>
+                            <div class="text-sm text-gray-400">HTML, CSS, JavaScript</div>
+                        </div>
+                        <div class="glassmorphism p-6 rounded-3xl text-center hover:scale-105 transition-transform bubble-button">
+                            <span class="text-4xl mb-3 block animate-bounce-cute">🐍</span>
+                            <div class="font-semibold">Python</div>
+                            <div class="text-sm text-gray-400">Backend & Data Science</div>
+                        </div>
+                        <div class="glassmorphism p-6 rounded-3xl text-center hover:scale-105 transition-transform bubble-button">
+                            <span class="text-4xl mb-3 block animate-bounce-cute">⚛️</span>
+                            <div class="font-semibold">React</div>
+                            <div class="text-sm text-gray-400">Component Magic</div>
+                        </div>
+                        <div class="glassmorphism p-6 rounded-3xl text-center hover:scale-105 transition-transform bubble-button">
+                            <span class="text-4xl mb-3 block animate-bounce-cute">🎨</span>
+                            <div class="font-semibold">UI/UX Design</div>
+                            <div class="text-sm text-gray-400">Beautiful Interfaces</div>
+                        </div>
+                        <div class="glassmorphism p-6 rounded-3xl text-center hover:scale-105 transition-transform bubble-button">
+                            <span class="text-4xl mb-3 block animate-bounce-cute">☁️</span>
+                            <div class="font-semibold">Cloud</div>
+                            <div class="text-sm text-gray-400">AWS & Azure</div>
+                        </div>
+                        <div class="glassmorphism p-6 rounded-3xl text-center hover:scale-105 transition-transform bubble-button">
+                            <span class="text-4xl mb-3 block animate-bounce-cute">📱</span>
+                            <div class="font-semibold">Mobile</div>
+                            <div class="text-sm text-gray-400">Cross-Platform Apps</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dream-dark relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bubble font-bold text-center mb-16 bg-gradient-to-r from-kawaii-lavender to-kawaii-peach bg-clip-text text-transparent">
+                <span class="animate-sparkle inline-block">✨</span> Skills & Magic <span class="animate-sparkle inline-block">✨</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="glassmorphism p-8 rounded-3xl hover:scale-105 transition-transform bubble-button">
+                    <div class="flex items-center mb-6">
+                        <span class="text-4xl mr-4 animate-bounce-cute">🌸</span>
+                        <h3 class="text-2xl font-kawaii font-bold text-kawaii-pink">Frontend Magic</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>React/Next.js <span class="animate-sparkle inline-block">✨</span></span>
+                                <span class="text-kawaii-pink">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>TypeScript <span class="animate-sparkle inline-block">💙</span></span>
+                                <span class="text-kawaii-blue">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Tailwind CSS <span class="animate-sparkle inline-block">💚</span></span>
+                                <span class="text-kawaii-mint">98%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="98"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="glassmorphism p-8 rounded-3xl hover:scale-105 transition-transform bubble-button">
+                    <div class="flex items-center mb-6">
+                        <span class="text-4xl mr-4 animate-bounce-cute">🔧</span>
+                        <h3 class="text-2xl font-kawaii font-bold text-kawaii-blue">Backend Power</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Node.js <span class="animate-sparkle inline-block">🚀</span></span>
+                                <span class="text-kawaii-blue">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Python <span class="animate-sparkle inline-block">🐍</span></span>
+                                <span class="text-kawaii-lavender">92%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Databases <span class="animate-sparkle inline-block">💾</span></span>
+                                <span class="text-kawaii-peach">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Skills -->
+                <div class="glassmorphism p-8 rounded-3xl hover:scale-105 transition-transform bubble-button">
+                    <div class="flex items-center mb-6">
+                        <span class="text-4xl mr-4 animate-bounce-cute">🎨</span>
+                        <h3 class="text-2xl font-kawaii font-bold text-kawaii-mint">Design Magic</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>UI/UX Design <span class="animate-sparkle inline-block">🎭</span></span>
+                                <span class="text-kawaii-mint">93%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="93"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Figma <span class="animate-sparkle inline-block">🎨</span></span>
+                                <span class="text-kawaii-yellow">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span>Animation <span class="animate-sparkle inline-block">✨</span></span>
+                                <span class="text-kawaii-pink">95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" data-width="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dream-purple/30 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bubble font-bold text-center mb-16 bg-gradient-to-r from-kawaii-pink to-kawaii-blue bg-clip-text text-transparent">
+                <span class="animate-heart-beat inline-block">💖</span> My Magical Projects <span class="animate-heart-beat inline-block">💖</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card glassmorphism rounded-3xl overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Kawaii Task Manager" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-kawaii-pink/80 text-dream-dark px-3 py-1 rounded-full text-sm font-kawaii font-bold">
+                                💾 App
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="animate-sparkle text-2xl">✨</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-kawaii font-bold mb-2 text-kawaii-pink">
+                            📝 Kawaii Task Manager
+                        </h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            A super cute task management app with adorable animations, productivity tracking, and kawaii rewards!
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-kawaii-pink/20 text-kawaii-pink px-2 py-1 rounded-full text-xs">React</span>
+                            <span class="bg-kawaii-blue/20 text-kawaii-blue px-2 py-1 rounded-full text-xs">Node.js</span>
+                            <span class="bg-kawaii-mint/20 text-kawaii-mint px-2 py-1 rounded-full text-xs">MongoDB</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Code
+                            </a>
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glassmorphism rounded-3xl overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Kawaii Weather App" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-kawaii-blue/80 text-dream-dark px-3 py-1 rounded-full text-sm font-kawaii font-bold">
+                                🎮 Interactive
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="animate-sparkle text-2xl">🌈</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-kawaii font-bold mb-2 text-kawaii-blue">
+                            🌈 Kawaii Weather App
+                        </h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Beautiful weather app with kawaii characters that change based on conditions and magical animations!
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-kawaii-blue/20 text-kawaii-blue px-2 py-1 rounded-full text-xs">Vue.js</span>
+                            <span class="bg-kawaii-lavender/20 text-kawaii-lavender px-2 py-1 rounded-full text-xs">API</span>
+                            <span class="bg-kawaii-peach/20 text-kawaii-peach px-2 py-1 rounded-full text-xs">CSS3</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Code
+                            </a>
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glassmorphism rounded-3xl overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Cyber Security Lab" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-kawaii-mint/80 text-dream-dark px-3 py-1 rounded-full text-sm font-kawaii font-bold">
+                                🔐 Cyber Lab
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="animate-sparkle text-2xl">🛡️</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-kawaii font-bold mb-2 text-kawaii-mint">
+                            🔐 Kawaii Security Lab
+                        </h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Interactive cybersecurity learning platform with cute characters teaching security concepts!
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-kawaii-mint/20 text-kawaii-mint px-2 py-1 rounded-full text-xs">Python</span>
+                            <span class="bg-kawaii-pink/20 text-kawaii-pink px-2 py-1 rounded-full text-xs">Flask</span>
+                            <span class="bg-kawaii-yellow/20 text-kawaii-yellow px-2 py-1 rounded-full text-xs">Security</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Code
+                            </a>
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glassmorphism rounded-3xl overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Kawaii E-commerce" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-kawaii-lavender/80 text-dream-dark px-3 py-1 rounded-full text-sm font-kawaii font-bold">
+                                🛍️ E-commerce
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="animate-sparkle text-2xl">🛒</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-kawaii font-bold mb-2 text-kawaii-lavender">
+                            🛍️ Kawaii Shop
+                        </h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Adorable e-commerce platform with animated shopping cart, wishlist, and magical checkout experience!
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-kawaii-lavender/20 text-kawaii-lavender px-2 py-1 rounded-full text-xs">Next.js</span>
+                            <span class="bg-kawaii-peach/20 text-kawaii-peach px-2 py-1 rounded-full text-xs">Stripe</span>
+                            <span class="bg-kawaii-mint/20 text-kawaii-mint px-2 py-1 rounded-full text-xs">PostgreSQL</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Code
+                            </a>
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card glassmorphism rounded-3xl overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="AI Chat Bot" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-kawaii-peach/80 text-dream-dark px-3 py-1 rounded-full text-sm font-kawaii font-bold">
+                                🤖 AI Bot
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="animate-sparkle text-2xl">🧠</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-kawaii font-bold mb-2 text-kawaii-peach">
+                            🤖 Kawaii AI Assistant
+                        </h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Intelligent chatbot with kawaii personality, emotional responses, and helpful coding assistance!
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-kawaii-peach/20 text-kawaii-peach px-2 py-1 rounded-full text-xs">Python</span>
+                            <span class="bg-kawaii-blue/20 text-kawaii-blue px-2 py-1 rounded-full text-xs">TensorFlow</span>
+                            <span class="bg-kawaii-yellow/20 text-kawaii-yellow px-2 py-1 rounded-full text-xs">NLP</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Code
+                            </a>
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card glassmorphism rounded-3xl overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=400" 
+                             alt="Mobile Learning App" 
+                             class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-kawaii-yellow/80 text-dream-dark px-3 py-1 rounded-full text-xs font-kawaii font-bold">
+                                📱 Mobile
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="animate-sparkle text-2xl">📚</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-kawaii font-bold mb-2 text-kawaii-yellow">
+                            📚 Kawaii Learning App
+                        </h3>
+                        <p class="text-sm text-gray-300 mb-4">
+                            Educational mobile app for kids with kawaii characters, mini-games, and progress tracking!
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-kawaii-yellow/20 text-kawaii-yellow px-2 py-1 rounded-full text-xs">React Native</span>
+                            <span class="bg-kawaii-mint/20 text-kawaii-mint px-2 py-1 rounded-full text-xs">Firebase</span>
+                            <span class="bg-kawaii-pink/20 text-kawaii-pink px-2 py-1 rounded-full text-xs">Gamification</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fab fa-github mr-2"></i>View Code
+                            </a>
+                            <a href="#" class="text-kawaii-pink hover:text-kawaii-blue transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dream-dark relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bubble font-bold text-center mb-16 bg-gradient-to-r from-kawaii-lavender to-kawaii-pink bg-clip-text text-transparent">
+                <span class="animate-heart-beat inline-block">💌</span> Let's Create Magic Together! <span class="animate-heart-beat inline-block">💌</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="animate-slide-up">
+                    <div class="kawaii-glassmorphism p-8 rounded-3xl">
+                        <h3 class="text-3xl font-kawaii font-bold mb-6 text-kawaii-pink">
+                            Ready for Kawaii Adventures? <span class="animate-sparkle inline-block">✨</span>
+                        </h3>
+                        <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                            I'd absolutely love to collaborate on your next magical project! Whether it's building something revolutionary, 
+                            creating delightful user experiences, or just chatting about kawaii tech - let's make something wonderful together! 
+                            <span class="animate-sparkle inline-block">🌟</span>
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">📧</span>
+                                <span>sophy.kawaii@example.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">🌍</span>
+                                <span>Available worldwide (Remote)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">⏰</span>
+                                <span>Usually responds within 24 hours</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-4 animate-bounce-cute">☕</span>
+                                <span>Always up for a virtual coffee chat!</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6">
+                            <a href="https://linkedin.com" class="text-kawaii-pink hover:text-kawaii-blue transition-all duration-300 transform hover:scale-110 bubble-button">
+                                <i class="fab fa-linkedin text-3xl animate-bounce-cute"></i>
+                            </a>
+                            <a href="https://github.com" class="text-kawaii-blue hover:text-kawaii-mint transition-all duration-300 transform hover:scale-110 bubble-button">
+                                <i class="fab fa-github text-3xl animate-bounce-cute"></i>
+                            </a>
+                            <a href="https://telegram.org" class="text-kawaii-lavender hover:text-kawaii-peach transition-all duration-300 transform hover:scale-110 bubble-button">
+                                <i class="fab fa-telegram text-3xl animate-bounce-cute"></i>
+                            </a>
+                            <a href="https://instagram.com" class="text-kawaii-mint hover:text-kawaii-yellow transition-all duration-300 transform hover:scale-110 bubble-button">
+                                <i class="fab fa-instagram text-3xl animate-bounce-cute"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slide-up">
+                    <form id="contact-form" class="glassmorphism p-8 rounded-3xl border-2 border-kawaii-pink/30">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium mb-2 text-kawaii-pink font-kawaii">
+                                Your Name <span class="animate-bounce-cute inline-block">🌸</span>
+                            </label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 bg-dream-purple/50 border border-gray-600 rounded-3xl focus:ring-2 focus:ring-kawaii-pink focus:border-transparent transition-all duration-300 backdrop-blur-sm focus:scale-105">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium mb-2 text-kawaii-blue font-kawaii">
+                                Email Address <span class="animate-bounce-cute inline-block">💌</span>
+                            </label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 bg-dream-purple/50 border border-gray-600 rounded-3xl focus:ring-2 focus:ring-kawaii-blue focus:border-transparent transition-all duration-300 backdrop-blur-sm focus:scale-105">
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium mb-2 text-kawaii-mint font-kawaii">
+                                What's This About? <span class="animate-bounce-cute inline-block">🎯</span>
+                            </label>
+                            <select id="subject" name="subject" required 
+                                    class="w-full px-4 py-3 bg-dream-purple/50 border border-gray-600 rounded-3xl focus:ring-2 focus:ring-kawaii-mint focus:border-transparent transition-all duration-300 backdrop-blur-sm focus:scale-105">
+                                <option value="">Choose a magical topic...</option>
+                                <option value="collaboration">🤝 Let's Collaborate!</option>
+                                <option value="project">💼 Project Inquiry</option>
+                                <option value="kawaii">🌸 Kawaii Tech Chat</option>
+                                <option value="friendship">💖 Just Saying Hi!</option>
+                                <option value="other">✨ Something Magical</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium mb-2 text-kawaii-lavender font-kawaii">
+                                Your Message <span class="animate-bounce-cute inline-block">💭</span>
+                            </label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 bg-dream-purple/50 border border-gray-600 rounded-3xl focus:ring-2 focus:ring-kawaii-lavender focus:border-transparent transition-all duration-300 backdrop-blur-sm resize-none focus:scale-105"
+                                      placeholder="Tell me about your amazing kawaii ideas! I'd love to hear from you! ✨"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full glassmorphism hover:bg-white/20 py-3 rounded-3xl transition-all duration-300 bubble-button font-semibold font-kawaii">
+                            <span class="mr-2">🚀</span>Send Kawaii Message!
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dream-purple/30 py-12 border-t border-kawaii-pink/20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <div class="text-2xl mb-6 font-kawaii text-kawaii-pink">
+                    <span class="animate-sparkle">$</span> ping sophy.dev
+                </div>
+                <div class="text-gray-400 text-sm mb-4 font-kawaii">
+                    © 2024 Sophy. Made with <span class="animate-heart-beat inline-block">💖</span>, 
+                    <span class="animate-bounce-cute inline-block">☕</span>, and infinite kawaii energy!
+                </div>
+                <div class="text-xs text-gray-500">
+                    Crafted with love using HTML, Tailwind CSS, and a sprinkle of magic 
+                    <span class="animate-sparkle inline-block">✨</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 glassmorphism text-white p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible hover:scale-110 bubble-button">
+        <div class="text-2xl">🚀🐰</div>
+    </button>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
+        // Custom Cursor
+        const cursor = document.getElementById('custom-cursor');
+        let mouseX = 0, mouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function updateCursor() {
+            cursor.style.left = mouseX - 15 + 'px';
+            cursor.style.top = mouseY - 15 + 'px';
+            requestAnimationFrame(updateCursor);
+        }
+        updateCursor();
+
+        // Typing Animation
+        const typingText = document.getElementById('typing-text');
+        const words = ['🌟 Software Engineer', '💻 Kawaii Coder', '☁️ Fullstack Dreamer', '🌼 Creative Dev'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        typeWriter();
+
+        // Kawaii Creatures Mouse Following
+        const creatures = document.querySelectorAll('.kawaii-creature');
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            creatures.forEach((creature, index) => {
+                const rect = creature.getBoundingClientRect();
+                const creatureCenterX = rect.left + rect.width / 2;
+                const creatureCenterY = rect.top + rect.height / 2;
+                
+                const dx = mouseX - creatureCenterX;
+                const dy = mouseY - creatureCenterY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 150) {
+                    const moveX = dx * 0.1;
+                    const moveY = dy * 0.1;
+                    creature.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.2)`;
+                    creature.style.filter = 'brightness(1.3) drop-shadow(0 0 15px rgba(255, 179, 230, 0.8))';
+                } else {
+                    creature.style.transform = 'translate(0px, 0px) scale(1)';
+                    creature.style.filter = 'brightness(1)';
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Skills Progress Animation
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress-fill');
+                    progressBars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            const width = bar.getAttribute('data-width');
+                            bar.style.width = width + '%';
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-item').forEach(item => {
+            skillsObserver.observe(item);
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<span class="mr-2">🌸</span>Sending Kawaii Message...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<span class="mr-2">💖</span>Message Sent! Thank you!';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    e.target.reset();
+                }, 3000);
+            }, 2000);
+        });
+
+        // Add scroll animations
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            animateOnScroll.observe(section);
+        });
+
+        // Creature click interactions
+        creatures.forEach((creature) => {
+            creature.addEventListener('click', () => {
+                creature.style.animation = 'bounce-cute 0.8s ease-out';
+                creature.style.transform = 'scale(1.5)';
+                creature.style.filter = 'brightness(1.5) drop-shadow(0 0 20px rgba(255, 179, 230, 0.8))';
+                
+                setTimeout(() => {
+                    creature.style.animation = 'float 4s ease-in-out infinite';
+                    creature.style.transform = '';
+                    creature.style.filter = '';
+                }, 800);
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            console.log('Mobile kawaii menu activated! 🌸');
+        });
+
+        // Add magical sparkle effects on hover
+        document.querySelectorAll('.bubble-button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const sparkle = document.createElement('div');
+                        sparkle.className = 'absolute w-2 h-2 bg-kawaii-yellow rounded-full animate-sparkle pointer-events-none';
+                        sparkle.style.left = Math.random() * 100 + '%';
+                        sparkle.style.top = Math.random() * 100 + '%';
+                        button.style.position = 'relative';
+                        button.appendChild(sparkle);
+                        
+                        setTimeout(() => {
+                            sparkle.remove();
+                        }, 1500);
+                    }, i * 150);
+                }
+            });
+        });
+
+        // Parallax effect for background elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const clouds = document.querySelectorAll('.kawaii-cloud');
+            const blobs = document.querySelectorAll('.kawaii-blob');
+            
+            clouds.forEach((cloud, index) => {
+                const speed = 0.2 + (index * 0.1);
+                cloud.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+            
+            blobs.forEach((blob, index) => {
+                const speed = 0.1 + (index * 0.05);
+                blob.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
